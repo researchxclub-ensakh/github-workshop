@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — ißrahim</title>
+  <meta name="description" content="Portfolio simple et responsive" />
+  <style>
+    /* Reset simple */
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    html,body {height:100%;}
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height:1.5;
+      color:#111827;
+      background: linear-gradient(180deg,#f7f9fc 0%, #ffffff 100%);
+      padding:20px;
+    }
+
+    /* Layout */
+    .container {max-width:1100px; margin:0 auto;}
+    header {display:flex; align-items:center; justify-content:space-between; gap:16px; padding:18px 0;}
+    .brand {display:flex; align-items:center; gap:12px;}
+    .logo {
+      width:48px;height:48px;border-radius:12px;
+      background:linear-gradient(135deg,#4f46e5,#06b6d4);
+      display:inline-flex; align-items:center; justify-content:center; color:white; font-weight:700;
+      box-shadow:0 6px 18px rgba(79,70,229,0.12);
+    }
+    nav a {margin-left:14px; text-decoration:none; color:#374151; font-weight:600;}
+    nav a:hover {color:#111827; text-decoration:underline;}
+
+    /* Hero */
+    .hero {display:grid; grid-template-columns: 1fr; gap:18px; align-items:center; padding:28px 0;}
+    .hero h1 {font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:8px;}
+    .hero p {color:#6b7280; max-width:60ch;}
+
+    .cta {margin-top:12px;}
+    .btn {
+      display:inline-block; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:700;
+      background:#111827; color:white;
+      box-shadow: 0 6px 18px rgba(17,24,39,0.12);
+    }
+
+    /* Projects */
+    .projects {margin-top:28px;}
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap:18px;
+    }
+    .card {
+      background:white; border-radius:12px; padding:16px; box-shadow:0 8px 22px rgba(15,23,42,0.06);
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .card h3 {font-size:1.05rem;}
+    .tags {display:flex; gap:8px; flex-wrap:wrap;}
+    .tag {font-size:.8rem; padding:6px 8px; border-radius:999px; background:#eef2ff; color:#4338ca;}
+
+    /* Contact */
+    .contact {margin-top:28px; background:#fff; padding:16px; border-radius:12px; box-shadow:0 8px 22px rgba(15,23,42,0.04);}
+    .field {display:flex; flex-direction:column; gap:6px; margin-bottom:10px;}
+    input, textarea {padding:10px; border-radius:8px; border:1px solid #e6e9ee; font-size:0.95rem;}
+    textarea {min-height:100px; resize:vertical;}
+
+    footer {margin-top:30px; color:#6b7280; font-size:.9rem; padding-bottom:40px;}
+
+    /* Responsive adjustments */
+    @media(min-width:900px){
+      .hero {grid-template-columns: 1fr 360px;}
+      .hero .card-mini {background:white;padding:16px;border-radius:12px;box-shadow:0 8px 22px rgba(15,23,42,0.06);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">IR</div>
+        <div>
+          <div style="font-weight:800">ißrahim RH</div>
+          <div style="font-size:.85rem;color:#6b7280">Développeur · Étudiant</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navigation principale">
+        <a href="#projects">Projets</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div>
+          <h1>Bonjour — je suis ißrahim, je crée des projets web modernes.</h1>
+          <p>Je conçois des applications front-end et back-end : sites e-commerce, outils académiques et petits projets full-stack. Voici quelques projets récents — tu peux cliquer sur un projet pour en savoir plus.</p>
+          <div class="cta">
+            <a class="btn" href="#projects">Voir mes projets</a>
+          </div>
+        </div>
+
+        <aside class="card-mini" aria-hidden="false">
+          <h3>Compétences</h3>
+          <div class="tags" style="margin-top:8px">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Django</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title" style="margin-bottom:12px">Projets récents</h2>
+        <div class="grid">
+          <article class="card" tabindex="0">
+            <h3>Site e-commerce (front)</h3>
+            <p style="color:#6b7280;font-size:.95rem">Page produit, panier, filtrage et recherche — HTML/CSS/JS.</p>
+            <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center">
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+              <a href="#" onclick="alert('Lien de projet — ajouter URL réelle'); return false" style="text-decoration:none;font-weight:700;color:#0ea5a4">Voir</a>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0">
+            <h3>Calculatrice graphique (Java)</h3>
+            <p style="color:#6b7280;font-size:.95rem">Application Java Swing avec historique, tracé de fonctions et constantes.</p>
+            <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center">
+              <div class="tags"><span class="tag">Java</span><span class="tag">Swing</span></div>
+              <a href="#" onclick="alert('Détails du projet Java'); return false" style="text-decoration:none;font-weight:700;color:#0ea5a4">Voir</a>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0">
+            <h3>Plateforme de réclamations (AquaReclaim)</h3>
+            <p style="color:#6b7280;font-size:.95rem">React + Django + MySQL — gestion des réclamations et réponses.</p>
+            <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center">
+              <div class="tags"><span class="tag">React</span><span class="tag">Django</span></div>
+              <a href="#" onclick="alert('Backend & frontend disponibles'); return false" style="text-decoration:none;font-weight:700;color:#0ea5a4">Voir</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" style="margin-bottom:12px">Contact</h2>
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="field">
+            <label for="name">Nom</label>
+            <input id="name" name="name" type="text" required placeholder="Ton nom" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="email@exemple.com" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Écris ton message..."></textarea>
+          </div>
+          <div>
+            <button class="btn" type="submit">Envoyer</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>ißrahim RH</strong> — Tous droits réservés</div>
+        <div style="font-size:.9rem;color:#9ca3af">Conçue avec ❤️ — sauvegarde ce fichier comme <code>index.html</code></div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Petit JS pour simuler l'envoi du formulaire
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message) {
+        alert('Merci de remplir tous les champs.');
+        return;
+      }
+      // Ici tu peux remplacer par un fetch() vers ton backend
+      alert('Merci ' + name + ' — message reçu ! (simulation)');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
